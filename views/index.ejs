@@ -9,5 +9,20 @@
 <body>
     <h3><%=title%></h3>
     <img src="data:image/jpeg;base64,<%=imgurl%>">
+    <button id="oImg">点击</button>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    document.getElementById('oImg').addEventListener('click',()=>{
+        axios({
+            method:'get',
+            url:'/get'
+        }).then((res)=>{
+            console.log(res)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    });
+</script>
 </body>
 </html>
